@@ -1,0 +1,36 @@
+#include <stdio.h>
+int main()
+{
+    int N; //lets say N = 576
+    scanf("%d",&N);
+    printf("%d\n",N);
+
+    int note100 = N/100; //576/100 = 5
+    printf("%d nota(s) de R$ 100,00\n",note100);
+
+    N = (N%100); //remainder of 576/100 is 76, so new N = 76
+    int note50 = N/50; //76/50 = 1
+    printf("%d nota(s) de R$ 50,00\n",note50);
+
+    N = (N%50); //remainder of 76/50 is 26, so new N = 26
+    int note20 = N/20; // 26/20 = 1
+    printf("%d nota(s) de R$ 20,00\n",note20);
+
+    N = (N%20); //remainder of 26/20 is 6, so new N = 6
+    int note10 = N/10; // 6/10 is 0
+    printf("%d nota(s) de R$ 10,00\n",note10);
+
+    N = N%10; // remainder 6/10 is 6, so the value of N remains same.
+    int note5 = N/5; //6/5 is 1
+    printf("%d nota(s) de R$ 5,00\n",note5);
+
+    N = N%5;
+    int note2 = N/2;
+    printf("%d nota(s) de R$ 2,00\n",note2);
+
+    N = N%2;
+    int note1 = N/1;
+    printf("%d nota(s) de R$ 1,00\n",note1);
+
+    return 0;
+}
