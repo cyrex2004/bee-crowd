@@ -1,0 +1,13 @@
+//to solve this problem we need take every input as a character rather than integer
+#include <stdio.h>
+int main()
+{
+    char d1, d2, sl1, m1, m2, sl2, y1, y2;
+    scanf("%c %c %c %c %c %c %c %c",&d1, &d2, &sl1, &m1, &m2, &sl2, &y1, &y2 );
+
+    printf("%c%c%c%c%c%c%c%c\n", m1,m2,sl1,d1,d2,sl2,y1,y2);
+    printf("%c%c%c%c%c%c%c%c\n", y1,y2,sl1,m1,m2,sl2,d1,d2);
+    printf("%c%c-%c%c-%c%c\n", d1,d2,m1,m2,y1,y2);
+
+    return 0;
+}
