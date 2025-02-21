@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int h1, m1, h2, m2, total_minute1, total_minute2, total_duration, hour, minute;
+    scanf("%d %d %d %d", &h1, &m1, &h2, &m2);
+
+    total_minute1 = (h1 * 60) + m1;
+    total_minute2 = (h2 * 60) + m2;
+
+    // Handle the 24-hour duration case
+    if (h1 == h2 && m1 == m2) {
+        printf("O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)\n");
+    } else {
+        // Handle overnight or same-day durations
+        if (total_minute2 > total_minute1) {
+            total_duration = total_minute2 - total_minute1;
+        } else {
+            total_duration = (24 * 60 - total_minute1) + total_minute2;
+        }
+
+        hour = total_duration / 60;
+        minute = total_duration % 60;
+
+        printf("O JOGO DUROU %d HORA(S) E %d MINUTO(S)\n", hour, minute);
+    }
+
+    return 0;
+}
