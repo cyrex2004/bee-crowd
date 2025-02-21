@@ -1,0 +1,49 @@
+#include <stdio.h>
+int main()
+{
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+
+    if (a>b && a>c) //here a is greater than b and c
+    {
+        if (b>c) //c is the smallest
+        {
+            printf("%d\n%d\n%d\n", c, b, a);
+        }
+        else //b is the smallest
+        {
+            printf("%d\n%d\n%d\n", b, c, a);
+        }
+    }
+
+    else if(b>a && b>c) //here b is the greatest
+    {
+        if (a>c) //c is the smallest
+        {
+            printf("%d\n%d\n%d\n", c, a, b);
+        }
+        else //a is the smallest
+        {
+            printf("%d\n%d\n%d\n", a, c, b);
+        }
+    }
+
+    else if(c>a && c>b) //c is the greatest
+    {
+        if (a>b) //b is the smallest
+        {
+            printf("%d\n%d\n%d\n", b, a, c);
+        }
+        else //a is the smallest
+        {
+            printf("%d\n%d\n%d\n", a, b, c);
+        }
+    }
+
+    printf("\n");
+
+    printf("%d\n%d\n%d\n", a, b, c);
+
+
+    return 0;
+}
