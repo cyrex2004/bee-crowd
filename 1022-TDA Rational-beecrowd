@@ -1,0 +1,70 @@
+#include <stdio.h>
+
+// Function to calculate the Greatest Common Divisor (GCD)
+int GCD(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    int N;
+    scanf("%d", &N); // Read the number of operations
+
+    for (int i = 0; i < N; i++) {
+        int n1, d1, n2, d2, numerator, denominator, gcd;
+        char op, slash;
+
+        // Read the operation in the format "n1 / d1 op n2 / d2"
+        scanf("%d %c %d %c %d %c %d", &n1, &slash, &d1, &op, &n2, &slash, &d2);
+
+        // Perform the operation based on the operator
+        switch (op) {
+            case '+':
+                numerator = n1 * d2 + n2 * d1;
+                denominator = d1 * d2;
+                break;
+            case '-':
+                numerator = n1 * d2 - n2 * d1;
+                denominator = d1 * d2;
+                break;
+            case '*':
+                numerator = n1 * n2;
+                denominator = d1 * d2;
+                break;
+            case '/':
+                // Check for division by zero
+                if (n2 == 0) {
+                    printf("Division by zero error.\n");
+                    continue;
+                }
+                numerator = n1 * d2;
+                denominator = n2 * d1;
+                break;
+            default:
+                printf("Invalid operator.\n");
+                continue;
+        }
+
+        // Calculate the GCD of the numerator and denominator
+        gcd = GCD(numerator, denominator);
+
+        // Simplify the fraction
+        int simplified_numerator = numerator / gcd;
+        int simplified_denominator = denominator / gcd;
+
+        // Ensure the simplified denominator is positive
+        if (simplified_denominator < 0) {
+            simplified_numerator = -simplified_numerator;
+            simplified_denominator = -simplified_denominator;
+        }
+
+        // Print the result
+        printf("%d/%d = %d/%d\n", numerator, denominator, simplified_numerator, simplified_denominator);
+    }
+
+    return 0;
+}
