@@ -1,0 +1,60 @@
+#include <stdio.h>
+int main()
+{
+    int d1,h1,m1,s1,d2,h2,m2,s2,total_second1,total_second2,final_days,final_hour,final_minute,final_second,n;
+    char colon;
+
+    scanf("%*s %d",&d1); //%*s will take a string but it wont save it in memory as we only need the integer value
+
+    scanf("%d %c %d %c %d",&h1,&colon,&m1,&colon,&s1);
+
+    scanf("%*s %d",&d2);
+
+    scanf("%d %c %d %c %d",&h2,&colon,&m2,&colon,&s2);
+
+
+
+    //lets convert everything to second
+
+    total_second1 = (d1*86400) + (h1*3600) + (m1*60) + s1;
+    total_second2 = (d2*86400) + (h2*3600) + (m2*60) + s2;
+
+    if(total_second2>total_second1)
+    {
+       n = total_second2 - total_second1;
+       final_days = n/86400;
+       n = n%86400;
+       final_hour = n/3600;
+       n=n%3600;
+       final_minute = n/60;
+       n=n%60;
+       final_second = n;
+       printf("%d dia(s)\n",final_days);
+       printf("%d hora(s)\n",final_hour);
+       printf("%d minuto(s)\n",final_minute);
+       printf("%d segundo(s)\n",final_second);
+
+    }
+    else if(total_second1>total_second2)
+    {
+       n = (86400-total_second1)+total_second2;
+       final_days = n/86400;
+       n = n%86400;
+       final_hour = n/3600;
+       n=n%3600;
+       final_minute = n/60;
+       n=n%60;
+       final_second = n;
+       printf("%d dia(s)\n",final_days);
+       printf("%d hora(s)\n",final_hour);
+       printf("%d minuto(s)\n",final_minute);
+       printf("%d segundo(s)\n",final_second);
+    }
+
+
+   return 0;
+}
+
+
+
+
