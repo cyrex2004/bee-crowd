@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+{
+    int i, x;
+    scanf("%d",&x);
+
+    if(x>=1 && x<=1000)
+    {
+        if(x%2 == 0) //x is even number
+        {
+            for(i=x+1; i<=x+11; i+=2)
+            {
+                printf("%d\n",i);
+            }
+        }
+        else //odd number
+        {
+            for(i=x; i<=x+10; i+=2)
+                printf("%d\n",i);
+        }
+    }
+
+
+    return 0;
+}
