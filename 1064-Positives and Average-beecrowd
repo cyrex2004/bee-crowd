@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    float numbers[6];
+    float average,sum;
+    int positive_count = 0;
+
+
+    for (int i = 0; i < 6; i++) {
+        scanf("%f", &numbers[i]);
+        if (numbers[i] > 0) {
+            positive_count++;
+            sum+=numbers[i];
+        }
+    }
+
+    printf("%d valores positivos\n", positive_count);
+    if(positive_count>0)
+    {
+        average = sum/positive_count;
+        printf("%.1f\n",average);
+    }
+    return 0;
+}
