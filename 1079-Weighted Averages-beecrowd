@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main()
+{
+    int i,n;
+    double x1,x2,x3,average;
+    scanf("%d",&n);
+
+    for(i=0;i<n;i++)
+    {
+        scanf("%lf %lf %lf",&x1,&x2,&x3);
+        average = (x1*2 + x2*3 + x3*5) / (2+3+5);
+        printf("%.1lf\n",average);
+    }
+
+
+ return 0;
+}
