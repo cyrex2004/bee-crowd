@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main()
+{
+    int i,n,c;
+    int in = 0;
+    int out = 0;
+
+    scanf("%d",&c);
+
+    for(i=0;i<c;i++)
+    {
+        scanf("%d",&n);
+        if(n>=10 && n<=20)
+        {
+            in++;
+        }
+        else
+        {
+            out++;
+        }
+    }
+
+    printf("%d in\n",in);
+
+    printf("%d out\n",out);
+
+    return 0;
+}
