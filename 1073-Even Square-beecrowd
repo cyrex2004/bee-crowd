@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main()
+{
+    int i,n,c;
+    int even=0,square_value;
+
+    scanf("%d",&c);
+    if(c>5 && c<2000)
+    {
+        for(i=2;i<=c;i+=2)
+        {
+            even+=2;
+            square_value = even*even;
+            printf("%d^2 = %d\n",even,square_value);
+        }
+    }
+
+    return 0;
+}
