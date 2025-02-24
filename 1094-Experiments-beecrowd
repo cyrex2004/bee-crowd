@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int i, n, number, tc = 0, tr = 0, ts = 0, total;
+    char character;
+    float pc, pr, ps;
+    
+    scanf("%d", &n); 
+
+    for (i = 0; i < n; i++) {
+        scanf("%d %c", &number, &character);
+        if (number >= 1 && number <= 15) { 
+            if (character == 'C') {
+                tc += number;
+            } else if (character == 'R') {
+                tr += number;
+            } else if (character == 'S') {
+                ts += number;
+            }
+        }
+    }
+
+    total = tc + tr + ts;
+    pc = ((float)tc / total) * 100;
+    pr = ((float)tr / total) * 100;
+    ps = ((float)ts / total) * 100;
+
+    printf("Total: %d cobaias\n", total);
+    printf("Total de coelhos: %d\n", tc);
+    printf("Total de ratos: %d\n", tr);
+    printf("Total de sapos: %d\n", ts);
+    printf("Percentual de coelhos: %.2f %%\n", pc);
+    printf("Percentual de ratos: %.2f %%\n", pr);
+    printf("Percentual de sapos: %.2f %%\n", ps);
+
+    return 0;
+}
